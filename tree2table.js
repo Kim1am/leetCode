@@ -7,7 +7,7 @@
 
 const data1 = {
   a: 1,
-  b: 'b',
+  b: [1],
   c: false,
 }
 
@@ -72,6 +72,19 @@ const data5 = {
     1: false,
     2: 1,
   },
+}
+
+const test1 = {
+  a: 1,
+  b: 1,
+  c: false,
+}
+function test(tree, lastkey = '') {
+  const isArr = Array.isArray(tree)
+  const keys = Object.keys(tree)
+  return keys.reduce((acc, key) => {
+    return (acc[key] = tree[key])
+  }, {})
 }
 
 function tree2table(tree, path = '') {
